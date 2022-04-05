@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "976664672337",
+    "project_id": "tutor-inteligente-app",
+    "storage_bucket": "tutor-inteligente-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976664672337:android:0c1653f654e8fa8f422070",
+        "android_client_info": {
+          "package_name": "com.example.tutorinteligente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976664672337-hamuijqci5bm6hf0ng01onltmskvpkbd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tutorinteligente",
+            "certificate_hash": "1aeff7ac3084c8ec016a218ee3637a8b8db32b83"
+          }
+        },
+        {
+          "client_id": "976664672337-9ngc2p98ts4mgv607e627g3v32ijadvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBZU1HVuaM5KA3gRcs-ARtxtKKvhHM43Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976664672337-9ngc2p98ts4mgv607e627g3v32ijadvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

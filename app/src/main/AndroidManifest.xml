@@ -3,6 +3,7 @@
     package="com.example.tutorinteligente">
 
     <application
+        android:name=".Application.TutorInteligenteApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorInteligente">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".Session.View.Activity.SplashScreenActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
@@ -19,9 +20,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".RegistroActivity"></activity>
-        <activity android:name=".AutenticadoActivity"></activity>
+        <activity
+            android:name=".Session.View.Activity.LoginActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".Session.View.Activity.RegistrationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Main.View.Activity.HomeActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

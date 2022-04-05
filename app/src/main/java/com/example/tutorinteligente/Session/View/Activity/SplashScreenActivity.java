@@ -1,4 +1,4 @@
-package com.example.tutorinteligente;
+package com.example.tutorinteligente.Session.View.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+        startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
         finish();
     }
 }
