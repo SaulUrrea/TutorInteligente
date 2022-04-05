@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:colorAccent">@color/blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColorPrimary">@color/gray</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="LearnEditTextStyleRound">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shadow_edittext</item>
+        <item name="android:paddingTop">@dimen/learn_spacing_standard_new</item>
+        <item name="android:paddingBottom">@dimen/learn_spacing_standard_new</item>
+        <item name="android:paddingStart">@dimen/learn_spacing_large</item>
+        <item name="android:paddingEnd">@dimen/learn_spacing_standard</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
