@@ -13,7 +13,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp">
+            android:padding="15dp"
+            >
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -34,11 +35,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButton"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="Perfil" />
+                android:text="Perfil"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
+
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,48 +61,57 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/usr_nombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <EditText
                 android:layout_marginTop="20dp"
+                android:id="@+id/usr_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_person1"
                 android:drawablePadding="40dp"
                 android:hint="Nombre Completo"
                 android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/circleImageView2"
                 tools:text="Nombre" />
 
-
-            <TextView
-                android:id="@+id/usr_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <EditText
                 android:layout_marginTop="20dp"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:id="@+id/usr_apellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_person1"
                 android:drawablePadding="40dp"
-                android:hint="Correo Electronico"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usr_nombre"
+                android:hint="Nombre Completo"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Apellido" />
+
+
+            <EditText
+                android:layout_marginTop="20dp"
+                android:id="@+id/usr_email"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:hint="Correo Electronico"
+                android:drawablePadding="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usr_apellido"
                 tools:text="Correo" />
 
             <com.google.android.material.button.MaterialButton
-
                 android:layout_marginTop="50dp"
-                android:id="@+id/btneditar"
+                android:id="@+id/btnactualizar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/blue"
-                android:text="Editar"
-                android:paddingHorizontal="10dp"
-                android:padding="5dp"
+                android:text="Actualizar"
                 app:cornerRadius="25dp"
+                android:paddingHorizontal="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +120,6 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 

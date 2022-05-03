@@ -29,6 +29,9 @@
         <activity
             android:name=".Main.View.Activity.HomeActivity"
             android:exported="true"/>
+        <activity
+            android:name=".Main.View.Activity.EditProfileActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
