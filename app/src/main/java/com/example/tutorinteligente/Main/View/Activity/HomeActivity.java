@@ -31,7 +31,6 @@ public class HomeActivity extends AppCompatActivity {
     PresenterHome presenterHome;
 
     private TextView nombreTextView,emailTextView;
-    private String email;
     private Button btnEditar;
 
     @Override

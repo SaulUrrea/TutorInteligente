@@ -28,5 +28,7 @@
     <string name="alert_dismiss">Cerrar</string>
     <string name="login_loading_message">Ingresando ...</string>
     <string name="reg_loading_message">Registrando usuario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

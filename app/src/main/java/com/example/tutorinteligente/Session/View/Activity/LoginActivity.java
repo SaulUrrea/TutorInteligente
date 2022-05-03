@@ -1,24 +1,21 @@
 package com.example.tutorinteligente.Session.View.Activity;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.content.Intent;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Button;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.tutorinteligente.Application.TutorInteligenteApplication;
-import com.example.tutorinteligente.Main.Presenter.PresenterHome;
 import com.example.tutorinteligente.Main.View.Activity.HomeActivity;
 import com.example.tutorinteligente.R;
 import com.example.tutorinteligente.Session.Presenter.PresenterSession;
+import com.example.tutorinteligente.Session.View.Adapters.LoginAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 import javax.inject.Inject;
 
@@ -28,10 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     @Inject
     PresenterSession presenterSession;
 
-    private EditText emailTextView, passwordTextView;
-    private Button BtnLogin, BtnRegistro;
-    ProgressDialog progressDialog;
-    private String email, password;
+    TabLayout tabLayout;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,50 +34,21 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         TutorInteligenteApplication.getTutorInteligenteApplication().getTutorInteligenteComponent().inject(this);
         initVars();
-        valdiateButtons();
     }
 
     private void initVars() {
-        emailTextView = findViewById(R.id.email);
-        passwordTextView = findViewById(R.id.password);
-        BtnLogin = findViewById(R.id.login);
-        BtnRegistro = findViewById(R.id.registro);
-        progressDialog=new ProgressDialog(this);
+        tabLayout=findViewById(R.id.tab_layout);
+        viewPager=findViewById(R.id.view_pager);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Ingresar "));
+        tabLayout.addTab(tabLayout.newTab().setText("Registro"));
+
+        final LoginAdapter adapter = new LoginAdapter(getSupportFragmentManager(), this,tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 
-    private void valdiateButtons() {
-        BtnRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { goToRegister(); }
-        });
 
-        BtnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginUserAccount();
-            }
-        });
-    }
-
-    private void loginUserAccount() {
-        email = emailTextView.getText().toString().trim();
-        password = passwordTextView.getText().toString().trim();
-        showLoadingMessage(getString(R.string.login_loading_message));
-
-        if (TextUtils.isEmpty(email)) {
-            emailTextView.setError(getString(R.string.no_email));
-            hiddenProgress();
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            passwordTextView.setError(getString(R.string.no_password));
-            hiddenProgress();
-        }
-
-        if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
-            presenterSession.loginWithEmail(email,password,this);
-        }
-    }
 
     public void goToMain() {
         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
@@ -104,14 +70,6 @@ public class LoginActivity extends AppCompatActivity {
         }else{
             startActivity(i);
         }
-    }
-    public void showLoadingMessage(String mensaje){
-        progressDialog.setMessage(mensaje);
-        progressDialog.show();
-    }
-
-    public void hiddenProgress(){
-        progressDialog.dismiss();
     }
 
     public void showErrorMessage() {

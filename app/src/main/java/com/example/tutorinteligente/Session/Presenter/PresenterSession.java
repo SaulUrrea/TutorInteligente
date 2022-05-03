@@ -39,10 +39,10 @@ public class PresenterSession {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    activity.hiddenProgress();
+                                    //activity.hiddenProgress();
                                     activity.goToMain();
                                 } else {
-                                    activity.hiddenProgress();
+                                    //activity.hiddenProgress();
                                     activity.showErrorMessage();
                                 }
                             }
