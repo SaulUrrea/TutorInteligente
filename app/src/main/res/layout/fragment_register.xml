@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
@@ -88,7 +87,8 @@
                 app:boxCornerRadiusBottomEnd="25dp"
                 app:boxCornerRadiusBottomStart="25dp"
                 app:boxCornerRadiusTopEnd="25dp"
-                app:boxCornerRadiusTopStart="25dp">
+                app:boxCornerRadiusTopStart="25dp"
+                app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwd"

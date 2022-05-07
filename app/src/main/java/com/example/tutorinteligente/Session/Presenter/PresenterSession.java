@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 
 import com.example.tutorinteligente.Application.TutorInteligenteApplication;
 import com.example.tutorinteligente.Session.Models.UserModel;
-import com.example.tutorinteligente.Session.View.Activity.LoginActivity;
-import com.example.tutorinteligente.Session.View.Activity.RegistrationActivity;
+import com.example.tutorinteligente.Session.View.Fragments.LoginFragment;
+import com.example.tutorinteligente.Session.View.Fragments.RegisterFragment;
 import com.example.tutorinteligente.Utils.GlobalVars;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,38 +32,38 @@ public class PresenterSession {
         this.db = FirebaseFirestore.getInstance();
     }
 
-    public void loginWithEmail(String email, String password, LoginActivity activity) {
+    public void loginWithEmail(String email, String password, LoginFragment activity) {
         this.mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                         new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    //activity.hiddenProgress();
+                                    activity.hiddenProgress();
                                     activity.goToMain();
                                 } else {
-                                    //activity.hiddenProgress();
+                                    activity.hiddenProgress();
                                     activity.showErrorMessage();
                                 }
                             }
                         });
     }
 
-    public void RegisterNewUser(UserModel user, String password, RegistrationActivity activity){
+    public void RegisterNewUser(UserModel user, String password,  RegisterFragment fragment){
         try {
             this.mAuth.createUserWithEmailAndPassword(user.getEmail(), password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task)
                         {
-                            activity.hiddenProgress();
+                            fragment.hiddenProgress();
                             if (task.isSuccessful()) {
                                 user.setUid(mAuth.getCurrentUser().getUid());
                                 saveUserInfo(user);
-                                setUserName(user.getName(),user.getLastName(),activity);
+                                setUserName(user.getName(),user.getLastName(),fragment);
                             }
                             else {
-                                activity.showError("El registro ha fallado, por favor intenta nuevamente");
+                                fragment.showError("El registro ha fallado, por favor intenta nuevamente");
                             }
                         }
                     });
@@ -72,7 +72,7 @@ public class PresenterSession {
         }
     }
 
-    public void setUserName(String name, String last_name, RegistrationActivity activity){
+    public void setUserName(String name, String last_name, RegisterFragment fragment ){
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(name + " " + last_name)
                 .build();
@@ -82,7 +82,7 @@ public class PresenterSession {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            activity.goToLogin();
+                            fragment.goToMain();
                         }
                     }
                 });

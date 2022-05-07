@@ -2,30 +2,19 @@ package com.example.tutorinteligente.Main.View.Activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorinteligente.Application.TutorInteligenteApplication;
 import com.example.tutorinteligente.Main.Presenter.PresenterHome;
 import com.example.tutorinteligente.R;
-import com.example.tutorinteligente.Session.Presenter.PresenterSession;
-import com.example.tutorinteligente.Session.View.Activity.RegistrationActivity;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 
 import javax.inject.Inject;
 
-public class HomeActivity extends AppCompatActivity {
+public class ProfileActivity extends BottomNavigationActivity {
 
     @Inject
     PresenterHome presenterHome;
@@ -38,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autenticado);
         TutorInteligenteApplication.getTutorInteligenteApplication().getTutorInteligenteComponent().inject(this);
+        setUpNavigation();
         initVars();
         valdiateButtons();
         presenterHome.getCurrentUser(this);

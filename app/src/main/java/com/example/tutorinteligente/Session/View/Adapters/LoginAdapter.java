@@ -33,11 +33,11 @@ public class LoginAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position){
         switch (position){
             case 0:
-                LoginFragment loginFragment = new LoginFragment();
+                LoginFragment loginFragment = new LoginFragment.newInstance().newInstance(this.context);
                 return loginFragment;
 
             case 1:
-                RegisterFragment registerFragment = new RegisterFragment();
+                RegisterFragment registerFragment = new RegisterFragment.newInstance().newInstance(this.context);
                 return registerFragment;
 
             default:

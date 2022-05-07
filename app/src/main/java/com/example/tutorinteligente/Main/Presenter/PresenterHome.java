@@ -1,21 +1,18 @@
 package com.example.tutorinteligente.Main.Presenter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.example.tutorinteligente.Application.TutorInteligenteApplication;
-import com.example.tutorinteligente.Main.View.Activity.EditProfileActivity;
-import com.example.tutorinteligente.Main.View.Activity.HomeActivity;
+import com.example.tutorinteligente.Main.View.Activity.ProfileActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -35,7 +32,7 @@ public class PresenterHome {
         this.db = FirebaseFirestore.getInstance();
     }
 
-    public void getCurrentUser(HomeActivity activity) {
+    public void getCurrentUser(ProfileActivity activity) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         activity.setNameAndEmail(user.getDisplayName(),user.getEmail());
     }
