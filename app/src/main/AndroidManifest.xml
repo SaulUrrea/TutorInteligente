@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TutorInteligente">
         <activity
-            android:name=".Main.View.Activity.TasksActivity"
-            android:exported="false" />
-        <activity
             android:name=".Session.View.Activity.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
@@ -27,10 +24,7 @@
             android:name=".Session.View.Activity.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".Main.View.Activity.ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Main.View.Activity.EditProfileActivity"
+            android:name=".Main.View.Activity.HomeActivity"
             android:exported="true" />
     </application>
 

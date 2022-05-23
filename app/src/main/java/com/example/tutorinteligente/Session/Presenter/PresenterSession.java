@@ -1,10 +1,14 @@
 package com.example.tutorinteligente.Session.Presenter;
 
+
+
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 
 import com.example.tutorinteligente.Application.TutorInteligenteApplication;
+import com.example.tutorinteligente.R;
 import com.example.tutorinteligente.Session.Models.UserModel;
 import com.example.tutorinteligente.Session.View.Fragments.LoginFragment;
 import com.example.tutorinteligente.Session.View.Fragments.RegisterFragment;
@@ -39,6 +43,7 @@ public class PresenterSession {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+                                    setFirstSession();
                                     activity.hiddenProgress();
                                     activity.goToMain();
                                 } else {
@@ -58,6 +63,7 @@ public class PresenterSession {
                         {
                             fragment.hiddenProgress();
                             if (task.isSuccessful()) {
+                                setFirstSession();
                                 user.setUid(mAuth.getCurrentUser().getUid());
                                 saveUserInfo(user);
                                 setUserName(user.getName(),user.getLastName(),fragment);
@@ -70,6 +76,18 @@ public class PresenterSession {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+
+    private void setFirstSession(){
+        SharedPreferences sharedPref = context.getSharedPreferences(null, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(context.getString(R.string.isFirstSession), true);
+        editor.apply();
+    }
+    public Boolean getFirstSession(){
+        SharedPreferences sharedPref = context.getSharedPreferences(null, Context.MODE_PRIVATE);
+        Boolean isFirstSession = sharedPref.getBoolean(context.getString(R.string.isFirstSession), false);
+        return isFirstSession;
     }
 
     public void setUserName(String name, String last_name, RegisterFragment fragment ){

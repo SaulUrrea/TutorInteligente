@@ -15,7 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.example.tutorinteligente.Application.TutorInteligenteApplication;
-import com.example.tutorinteligente.Main.View.Activity.ProfileActivity;
+import com.example.tutorinteligente.Main.View.Activity.HomeActivity;
 import com.example.tutorinteligente.R;
 import com.example.tutorinteligente.Session.Presenter.PresenterSession;
 import com.google.android.material.button.MaterialButton;
@@ -109,7 +109,7 @@ public class LoginFragment extends Fragment {
     }
 
     public void goToMain() {
-        Intent i = new Intent(mContext, ProfileActivity.class);
+        Intent i = new Intent(mContext, HomeActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);

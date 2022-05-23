@@ -16,4 +16,8 @@
     <color name="colorAccent">#FFFFFFFF</color>
     <color name="blue">#086BB5</color>
     <color name="gray">#7e7676</color>
+    <color name="startblue">#36BEF4</color>
+    <color name="endblue">#3665F4</color>
+    <color name="graylight">#EDEDED</color>
+    <color name="bleAccent">#02B9F7</color>
 </resources>

@@ -6,7 +6,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.tutorinteligente.Application.TutorInteligenteApplication;
-import com.example.tutorinteligente.Main.View.Activity.ProfileActivity;
+import com.example.tutorinteligente.Main.View.Fragments.ProfileFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,13 +32,14 @@ public class PresenterHome {
         this.db = FirebaseFirestore.getInstance();
     }
 
-    public void getCurrentUser(ProfileActivity activity) {
+    public void getCurrentUser(ProfileFragment activity) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         activity.setNameAndEmail(user.getDisplayName(),user.getEmail());
     }
 
 
-    public void updateUserInfo(String name, String lastname) {
+    public void updateUserInfo(String name) {
+        String lastname = "";
         FirebaseUser uid = FirebaseAuth.getInstance().getCurrentUser();
         Map<String, Object> user = new HashMap<>();
         user.put("name", name);

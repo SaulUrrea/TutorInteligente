@@ -17,6 +17,10 @@ android {
         multiDexEnabled true
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
