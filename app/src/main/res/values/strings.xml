@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">TutorInteligente</string>
+    <string name="no_nombre">Nombre</string>
+    <string name="no_apellido">Apellido</string>
+    <string name="no_email">El correo no puede estar vacio</string>
+    <string name="no_password">La contraseña no puede estar vacia</string>
+    <string name="aut_exitosa">Se ha autenticado exitosamente</string>
+    <string name="aut_no_exitosa">Ocurrió algo inesperado, inténtalo nuevamente</string>
+    <string name="reg_exitoso">Se ha registrado exitosamente</string>
+    <string name="reg_fallido">El registro ha fallado, por favor intenta nuevamente</string>
+    <string name="hint_email">Email</string>
+    <string name="email_malo">El email ingresado no es correcto</string>
+    <string name="hint_pass">Contraseña</string>
+    <string name="hint_pass2">Escribe nuevamente tu contraseña</string>
+    <string name="hint_passdif">Las contraseñas no coinciden</string>
+    <string name="hint_pass_no_cumple">La contraseña debe tener mínimo 8 dígitos, sin espacios y dos caracteres especial</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_apellido">Apellido</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="btn_registrar">Regístrate</string>
+    <string name="title_reg">Registro</string>
+    <string name="btn_registro">Regístrate</string>
+    <string name="btn_loginregistro">Inicia sesión</string>
+    <string name="title_registro">¿Aún no tienes una cuenta?</string>
+    <string name="title_login">¿Ya tienes una cuenta?</string>
+    <string name="alert">Atención</string>
+    <string name="login_error">Error al iniciar sesión, verifique su usuario y contraseña</string>
+    <string name="alert_dismiss">Cerrar</string>
+    <string name="login_loading_message">Ingresando ...</string>
+    <string name="reg_loading_message">Registrando usuario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="isFirstSession">isFirstSession</string>
+
 </resources>

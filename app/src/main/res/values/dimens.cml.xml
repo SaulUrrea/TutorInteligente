@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="learn_spacing_control_half">2dp</dimen>
+    <dimen name="learn_spacing_control">4dp</dimen>
+    <dimen name="learn_spacing_standard">15dp</dimen>
+    <dimen name="learn_spacing_standard_new">16dp</dimen>
+    <dimen name="learn_spacing_large">24dp</dimen>
+    <dimen name="learn_spacing_xlarge">32dp</dimen>
+    <dimen name="learn_spacing_xxlarge">40dp</dimen>
+</resources>
